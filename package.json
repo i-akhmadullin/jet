@@ -28,9 +28,5 @@
   "devDependencies": {
     "mocha": "~1.0.3",
     "mocha-gherkin": "http://nodeload.github.com/mklabs/mocha-gherkin/tarball/master"
-  },
-  // "scripts": {
-  //   "pretest": "git submodule update --init",
-  //   "test": "node node_modules/mocha/bin/mocha test/tasks/*.js --silent"
-  // }
+  }
 }
