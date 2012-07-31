@@ -9,7 +9,10 @@
   },
   "main": "./jet.js",
   "dependencies": {
+    "connect": "~2.3.0",
     "grunt": "0.3.9"
+  },
+  "devDependencies": {
   },
   "engines": {
     "node": "~0.8.4"
