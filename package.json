@@ -1,9 +1,9 @@
 {
   "name": "jet",
-  "description": "",
+  "description": "123",
   "version": "0.1.0",
   "homepage": "http://github.com/",
-  "author": " ",
+  "author": "21",
   "directories": {
     "lib": "./lib"
   },
@@ -12,7 +12,7 @@
   },
   "main": "./lib/jet.js",
   "dependencies": {
-    "coa": "~0.3.2",
+    "coa": "~0.3.2"
   },
   "devDependencies": {
     "vows": "~0.6.2"
@@ -20,6 +20,5 @@
   "engines": {
     "node": ">= 0.4.0 <0.8.4"
   },
-  "preferGlobal": true,
-  "optionalDependencies": {}
+  "preferGlobal": true
 }
