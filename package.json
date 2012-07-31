@@ -1,20 +1,25 @@
 {
-  "author": "somebody",
   "name": "jet",
-  "description": "Boilerplate node build script",
+  "description": "",
   "version": "0.1.0",
-  "homepage": "http://example.com",
-  "bin": {
-    "jet": "./bin/jet.js"
+  "homepage": "http://github.com/",
+  "author": " ",
+  "directories": {
+    "lib": "./lib"
   },
-  "main": "./jet.js",
+  "bin": {
+    "jet": "./bin/jet"
+  },
+  "main": "./lib/jet.js",
   "dependencies": {
-    "connect": "1.9.1",
-    "grunt": "0.3.9"
+    "coa": "~0.3.2",
   },
   "devDependencies": {
+    "vows": "~0.6.2"
   },
   "engines": {
-    "node": "~0.8.4"
-  }
+    "node": ">= 0.4.0 <0.8.4"
+  },
+  "preferGlobal": true,
+  "optionalDependencies": {}
 }
