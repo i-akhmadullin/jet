@@ -15,7 +15,7 @@
     "ncp": "~0.2.6",
     "requirejs": "~1.0.8",
     "clean-css": "~0.3.2",
-    "connect": "~1.8.6",
+    "connect": "~1.9.2",
     "grunt": "~0.3.8",
     "socket.io": "~0.9.5",
     "request": "~2.9.202",
