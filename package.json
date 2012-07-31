@@ -5,7 +5,7 @@
   "version": "0.1.0",
   "homepage": "http://example.com",
   "bin": {
-    "jet": "./bin/jet"
+    "jet": "./bin/jet.js"
   },
   "main": "./jet.js",
   "dependencies": {
