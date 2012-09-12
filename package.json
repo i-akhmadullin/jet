@@ -16,7 +16,7 @@
   "dependencies": {
     "grunt": "0.3.15",
     "styletto": "*",
-    "grunt-styletto": ">=0.1.2",
+    "grunt-styletto": ">=0.1.2"
   },
   "devDependencies": {},
   "engines": {
