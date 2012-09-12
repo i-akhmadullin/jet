@@ -1,1 +1,1 @@
-just debugging some bugs
+`npm install https://github.comi-akhmadullin/jet/tarball/master -g`
