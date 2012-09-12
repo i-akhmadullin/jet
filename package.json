@@ -3,7 +3,9 @@
   "description": "123",
   "version": "0.1.0",
   "homepage": "http://github.com/",
-  "author": "21",
+  "author": {
+    "name": "21"
+  },
   "directories": {
     "lib": "./lib"
   },
@@ -12,17 +14,19 @@
   },
   "main": "./lib/jet.js",
   "dependencies": {
-    "coa": "~0.3.2",
-    "q": "~0.7.2",
-    "qq": "0.3.3",
-    "q-wrap": "~0.0.1",
-    "inherit": "~1.0.0"
+    "grunt": "0.3.15",
+    "styletto": "*",
+    "grunt-styletto": ">=0.1.2",
   },
-  "devDependencies": {
-
-  },
+  "devDependencies": {},
   "engines": {
     "node": ">= 0.4.0 =<0.8.4"
   },
-  "preferGlobal": true
+  "preferGlobal": true,
+  "readme": "just debugging some bugs",
+  "_id": "jet@0.1.0",
+  "dist": {
+    "shasum": "d39c541ac318c8049918ec7aa0035c09a3beea00"
+  },
+  "_from": "https://github.com/i-akhmadullin/jet/tarball/master"
 }
