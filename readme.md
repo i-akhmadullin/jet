@@ -1,1 +1,1 @@
-`npm install https://github.comi-akhmadullin/jet/tarball/master -g`
+`npm install https://github.com/i-akhmadullin/jet/tarball/master -g`
