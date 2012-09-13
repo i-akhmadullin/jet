@@ -5,7 +5,6 @@
  */
 
 module.exports = function(grunt) {
-  console.log( 'stylt' );
   var styletto = require("styletto");
 
   grunt.registerMultiTask('styletto', 'Compile Stylus files with styletto.', function() {
