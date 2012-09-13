@@ -21,5 +21,11 @@
   "devDependencies": {},
   "engines": {
     "node": ">= 0.4.0 =<0.8.4"
-  }
+  },
+  "readme": "`npm install https://github.com/i-akhmadullin/jet/tarball/master -g`",
+  "_id": "jet@0.1.0",
+  "dist": {
+    "shasum": "7c88106028a20f45e43157286a9d40950ae252d8"
+  },
+  "_from": "https://github.com/i-akhmadullin/jet/tarball/master"
 }
