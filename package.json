@@ -1,10 +1,10 @@
 {
   "name": "jet",
-  "description": "123",
+  "description": "Nothing to see there yet",
   "version": "0.1.0",
-  "homepage": "http://github.com/",
+  "homepage": "https://github.com/i-akhmadullin/jet.git",
   "author": {
-    "name": "21"
+    "name": "Ilya Akhmadullin"
   },
   "directories": {
     "lib": "./lib"
@@ -15,7 +15,7 @@
   "main": "./lib/jet.js",
   "dependencies": {
     "grunt": "0.3.15",
-    "styletto": "*",
+    "styletto": "git://github.com/jetstyle/styletto.git#develop",
     "grunt-css": "*"
   },
   "devDependencies": {},
