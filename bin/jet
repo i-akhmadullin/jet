@@ -1,3 +1,6 @@
 #!/usr/bin/env node
 
+var jet = module.exports;
+// jet.plugins = require('./lib/plugins');
+jet.utils = require('../lib/utils');
 require('../lib/jet');

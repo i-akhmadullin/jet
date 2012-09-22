@@ -1,10 +1,10 @@
 {
   "name": "jet",
-  "description": "Nothing to see there yet",
-  "version": "0.1.1",
-  "homepage": "https://github.com/i-akhmadullin/jet.git",
+  "description": "123",
+  "version": "0.1.0",
+  "homepage": "http://github.com/",
   "author": {
-    "name": "Ilya Akhmadullin"
+    "name": "21"
   },
   "directories": {
     "lib": "./lib"
@@ -15,8 +15,10 @@
   "main": "./lib/jet.js",
   "dependencies": {
     "grunt": "0.3.15",
-    "styletto": "~0.3.1",
-    "grunt-css": "*"
+    "styletto": "*",
+    "grunt-css": "*",
+    "request": "~2.9.200",
+    "tar": "~0.1.13"
   },
   "devDependencies": {},
   "engines": {
@@ -25,7 +27,7 @@
   "readme": "`npm install https://github.com/i-akhmadullin/jet/tarball/master -g`",
   "_id": "jet@0.1.0",
   "dist": {
-    "shasum": "7c88106028a20f45e43157286a9d40950ae252d8"
+    "shasum": "8d59b563ee456277d5fc01c2c59bd04ba4b84b25"
   },
   "_from": "https://github.com/i-akhmadullin/jet/tarball/master"
 }
