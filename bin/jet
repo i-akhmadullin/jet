@@ -1,6 +1,67 @@
 #!/usr/bin/env node
+var fs = require('fs'),
+  exec = require('child_process').exec,
+  join = require('path').join,
+  grunt = require('grunt'),
+  colors = require('colors'),
+  path = require('path'),
+  prompt = require('prompt'),
+  yeoman = require('../'),
+  pkg = require('../package.json'),
+  _ = grunt.util._,
+  async = grunt.util.async,
+  compiled = _.template( fs.readFileSync( join(__dirname, 'help.txt'), 'utf8' ));
 
-var jet = module.exports;
-// jet.plugins = require('./lib/plugins');
-jet.utils = require('../lib/utils');
-require('../lib/jet');
+function init() {
+// grunt with the plugin registered
+  grunt.npmTasks(join(__dirname, '../'));
+
+  // Get back a reference to the internal grunt cli object so that we can read
+  // command line parsed options from grunt, to run our internal additional
+  // logic.
+
+  var cli =  require('grunt/lib/grunt/cli');
+
+  // avoid the deprecation notice: goo.gl/mk2De
+  Object.defineProperty(grunt, 'utils', {
+    get: function() {
+      return grunt.util;
+    }
+  });
+
+  // command line options and remaining args
+  var opts = cli.options,
+    cmds = cli.tasks,
+    route = cmds.join(' ').trim('');
+
+  // custom help, on `h5bp help`
+  if(/^help/.test(route)) {
+    if(/^help$/.test(route)) {
+      return console.log( compiled() );
+    }
+    cli.tasks = cmds.join(':');
+  }
+
+  // specific flag to ensure we bypass insight prompt when running the test task
+  if(/^test/.test(route)) {
+    var env = process.env;
+    env.yeoman_test = true;
+  }
+
+  // add the plugin version on `--version`
+  if(opts.version) {
+    return console.log('%s  v%s', pkg.name, pkg.version);
+  }
+
+  // Inform users to run `server` instead of `watch`
+  if ( /^watch/.test( route ) ) {
+    return console.log('\nYeoman`s watch task is integrated within `yeoman server` to combine\n\
+  the dev server, re-compilation and live reloading of changed assets.\n\n\
+  Feel free to run ' + 'yeoman'.bold.red + ' ' + 'server'.bold.yellow + ' instead!');
+  }
+
+  // the grunt cli
+  grunt.cli();
+}
+
+init();
