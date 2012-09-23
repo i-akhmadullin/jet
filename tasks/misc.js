@@ -7,75 +7,75 @@ var fs = require('fs'),
 
 module.exports = function(grunt) {
 
-  grunt.registerTask('intro', 'Kindly inform the developer about the impending magic', function() {
-    var intro = grunt.config('intro') || '';
-    intro = Array.isArray(intro) ? intro : [intro];
-    grunt.log.writeln(intro.join(utils.linefeed));
-  });
+  // grunt.registerTask('intro', 'Kindly inform the developer about the impending magic', function() {
+  //   var intro = grunt.config('intro') || '';
+  //   intro = Array.isArray(intro) ? intro : [intro];
+  //   grunt.log.writeln(intro.join(utils.linefeed));
+  // });
 
-  grunt.registerMultiTask('mkdirs', 'Prepares the build dirs', function() {
-    this.requires('clean');
-    this.requiresConfig('staging');
+  // grunt.registerMultiTask('mkdirs', 'Prepares the build dirs', function() {
+  //   this.requires('clean');
+  //   this.requiresConfig('staging');
 
-    // store the current working directory, a subset of tasks needs to update
-    // the grunt.file.setBase accordinly on temp/ dir. And we might want
-    // chdir back to the original one
-    var base = grunt.config('base') || grunt.option('base') || process.cwd();
-    grunt.config('base', base);
+  //   // store the current working directory, a subset of tasks needs to update
+  //   // the grunt.file.setBase accordinly on temp/ dir. And we might want
+  //   // chdir back to the original one
+  //   var base = grunt.config('base') || grunt.option('base') || process.cwd();
+  //   grunt.config('base', base);
 
-    var name = this.target,
-      target = path.resolve(grunt.config(name)),
-      source = path.resolve(this.data),
-      cb = this.async();
+  //   var name = this.target,
+  //     target = path.resolve(grunt.config(name)),
+  //     source = path.resolve(this.data),
+  //     cb = this.async();
 
-    // todo a way to configure this from Gruntfile
-    var ignores = ['.gitignore', '.ignore', '.buildignore'];
+  //   // todo a way to configure this from Gruntfile
+  //   var ignores = ['.gitignore', '.ignore', '.buildignore'];
 
-    grunt.log
-      .writeln('Copying into ' + target)
-      .writeln('Ignoring ' + grunt.log.wordlist(ignores));
+  //   grunt.log
+  //     .writeln('Copying into ' + target)
+  //     .writeln('Ignoring ' + grunt.log.wordlist(ignores));
 
 
-    grunt.helper('copy', source, target, ignores, function(e) {
-      if ( e ) {
-        grunt.log.error( e.stack || e.message );
-      } else {
-        grunt.log.ok( source + ' -> ' + target );
-      }
+  //   grunt.helper('copy', source, target, ignores, function(e) {
+  //     if ( e ) {
+  //       grunt.log.error( e.stack || e.message );
+  //     } else {
+  //       grunt.log.ok( source + ' -> ' + target );
+  //     }
 
-      // Once copy done, ensure the current working directory is the temp one.
-      grunt.file.setBase(grunt.config('staging'));
-      cb(!e);
-    });
-  });
+  //     // Once copy done, ensure the current working directory is the temp one.
+  //     grunt.file.setBase(grunt.config('staging'));
+  //     cb(!e);
+  //   });
+  // });
 
-  grunt.registerTask('copy', 'Copies the whole staging(temp/) folder to output (dist/) one', function() {
-    this.requiresConfig('staging', 'output');
+  // grunt.registerTask('copy', 'Copies the whole staging(temp/) folder to output (dist/) one', function() {
+  //   this.requiresConfig('staging', 'output');
 
-    var config = grunt.config(),
-      cb = this.async();
+  //   var config = grunt.config(),
+  //     cb = this.async();
 
-    // prior to run the last copy step, switch back the cwd to the original one
-    // todo: far from ideal, would most likely go into other problem here
-    grunt.file.setBase(config.base);
+  //   // prior to run the last copy step, switch back the cwd to the original one
+  //   // todo: far from ideal, would most likely go into other problem here
+  //   grunt.file.setBase(config.base);
 
-    // todo a way to configure this from Gruntfile
-    var ignores = ['.gitignore', '.ignore', '.buildignore'];
+  //   // todo a way to configure this from Gruntfile
+  //   var ignores = ['.gitignore', '.ignore', '.buildignore'];
 
-    grunt.task.helper('copy', config.staging, config.output, ignores, function(e) {
-      if ( e ) {
-        grunt.log.error( e.stack || e.message );
-      } else {
-        grunt.log.ok( path.resolve( config.staging ) + ' -> ' + path.resolve( config.output ) );
-      }
-      cb(!e);
-    });
-  });
+  //   grunt.task.helper('copy', config.staging, config.output, ignores, function(e) {
+  //     if ( e ) {
+  //       grunt.log.error( e.stack || e.message );
+  //     } else {
+  //       grunt.log.ok( path.resolve( config.staging ) + ' -> ' + path.resolve( config.output ) );
+  //     }
+  //     cb(!e);
+  //   });
+  // });
 
-  grunt.registerTask('clean', 'Wipe the previous build dirs', function() {
-    var dirs = [grunt.config('staging'), grunt.config('output')];
-    dirs.forEach(grunt.task._helpers.rimraf);
-  });
+  // grunt.registerTask('clean', 'Wipe the previous build dirs', function() {
+  //   var dirs = [grunt.config('staging'), grunt.config('output')];
+  //   dirs.forEach(grunt.task._helpers.rimraf);
+  // });
 
   //
   // **rimraf** is the helper wrapper for

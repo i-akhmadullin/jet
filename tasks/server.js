@@ -258,7 +258,7 @@ module.exports = function(grunt) {
       // sure, those files are compiled and not revved.
 
       // concat styletto:dev styletto:dev_ie
-      grunt.task.run('open-browser');
+      grunt.task.run('concat styletto:dev styletto:dev_ie open-browser');
     }
 
     grunt.task.run('watch');

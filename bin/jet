@@ -15,6 +15,8 @@ var fs = require('fs'),
 function init() {
 // grunt with the plugin registered
   grunt.npmTasks(join(__dirname, '../'));
+  grunt.loadTasks(join(__dirname, '../node_modules/grunt-styletto/tasks'));
+  grunt.loadTasks(join(__dirname, '../node_modules/grunt-css/tasks'));
 
   // Get back a reference to the internal grunt cli object so that we can read
   // command line parsed options from grunt, to run our internal additional

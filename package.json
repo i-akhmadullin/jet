@@ -16,6 +16,7 @@
   "dependencies": {
     "grunt": "https://nodeload.github.com/cowboy/grunt/tarball/0ba6d4b529",
     "styletto": "*",
+    "grunt-styletto": "*",
     "grunt-css": "*",
     "request": "~2.9.200",
     "open": "0.0.2",
