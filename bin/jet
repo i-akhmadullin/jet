@@ -15,6 +15,13 @@ var fs = require('fs'),
 function init() {
 // grunt with the plugin registered
   grunt.npmTasks(join(__dirname, '../'));
+
+  //
+  // note: We need to use loadTasks instead of loadNpmTasks, otherwise will try
+  // to load relative to gruntfile node_modules, this would require user to
+  // install manually. So we load tasks specifically from our node_modules,
+  // with abs path.
+  //
   grunt.loadTasks(join(__dirname, '../node_modules/grunt-styletto/tasks'));
   grunt.loadTasks(join(__dirname, '../node_modules/grunt-css/tasks'));
 
