@@ -213,7 +213,7 @@ module.exports = function(grunt) {
     var targets = {
       // these paths once config and paths resolved will need to pull in the
       // correct paths from config
-      app: path.resolve('./'),
+      app: path.resolve( grunt.config('server.base') || './'),
       dist: path.resolve('dist'),
       test: path.resolve('test'),
 
