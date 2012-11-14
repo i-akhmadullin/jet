@@ -233,6 +233,20 @@ module.exports = function(grunt) {
       return false;
     }
 
+    var tasks = {
+      // We do want our coffee, and compass recompiled on change
+      // and our browser opened and refreshed both when developping
+      // (app) and when writing tests (test)
+      // app: 'clean coffee compass open-browser watch',
+      app: 'concat styletto:dev styletto:dev_ie open-browser watch',
+      // test: 'clean coffee compass open-browser watch',
+      // Before our headless tests are run, ensure our coffee
+      // and compass are recompiled
+      // phantom: 'clean coffee compass',
+      dist: 'watch',
+      reload: 'watch'
+    };
+
     opts = {
       // prevent browser opening on `reload` target
       open: target !== 'reload',
@@ -252,16 +266,8 @@ module.exports = function(grunt) {
         }
     });
 
-    if(target === 'app') {
-      // when serving app, make sure to delete the temp/ dir from w/e was
-      // previously compiled here, and trigger compass / coffee mostly to make
-      // sure, those files are compiled and not revved.
-
-      // concat styletto:dev styletto:dev_ie
-      grunt.task.run('concat styletto:dev styletto:dev_ie open-browser');
-    }
-
-    grunt.task.run('watch');
+    // possibly need to be configurable?
+    grunt.task.run(tasks.app);
   });
 
   grunt.registerHelper('server', function(opts, cb) {
@@ -282,7 +288,7 @@ module.exports = function(grunt) {
    // Make empty directories browsable.
     middleware.push(connect.directory(opts.base));
 
-    if ( (opts.target === 'test') || ( opts.target == 'phantom')) {
+    if ( (opts.target === 'test') || ( opts.target === 'phantom')) {
       // We need to expose our code as well
       middleware.push(connect.static(path.resolve('app')));
       // Make empty directories browsable.
