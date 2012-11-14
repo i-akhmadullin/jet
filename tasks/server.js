@@ -278,9 +278,9 @@ module.exports = function(grunt) {
     // one (compiled assets takes precedence over same pathname within app/)
     middleware.push(connect.static(path.join(opts.base, '../temp')));
     // Serve static files.
-    middleware.push(connect.static(opts.base))
+    middleware.push(connect.static(opts.base));
    // Make empty directories browsable.
-    middleware.push(connect.directory(opts.base))
+    middleware.push(connect.directory(opts.base));
 
     if ( (opts.target === 'test') || ( opts.target == 'phantom')) {
       // We need to expose our code as well
@@ -341,7 +341,6 @@ module.exports = function(grunt) {
         cb(null, port);
       });
   });
-
 
   // Error handlers
   // --------------
