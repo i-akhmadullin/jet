@@ -1,10 +1,11 @@
 {
   "name": "jet",
-  "description": "123",
-  "version": "0.1.0",
-  "homepage": "http://github.com/",
+  "description": "Stripped down yeoman with styletto",
+  "version": "0.1.1",
+  "homepage": "http://github.com/i-akhmadullin/jet",
   "author": {
-    "name": "21"
+    "name": "Ilya Akhmadullin",
+    "email": "ilya.akhmadullin@gmail.com"
   },
   "directories": {
     "lib": "./lib"
@@ -35,13 +36,5 @@
     "es6-collections": ">=0.2.0"
   },
   "devDependencies": {},
-  "engines": {
-    "node": ">= 0.4.0 =<0.8.4"
-  },
-  "readme": "`npm install https://github.com/i-akhmadullin/jet/tarball/master -g`",
-  "_id": "jet@0.1.0",
-  "dist": {
-    "shasum": "8d59b563ee456277d5fc01c2c59bd04ba4b84b25"
-  },
-  "_from": "https://github.com/i-akhmadullin/jet/tarball/master"
+  "readme": "`npm install https://github.com/i-akhmadullin/jet/tarball/master -g`"
 }
