@@ -1,6 +1,6 @@
 #Установка
-`npm install https://github.com/i-akhmadullin/jet/tarball/master -g`
-или 
+`npm install https://github.com/i-akhmadullin/jet/tarball/master -g`  
+или  
 `sudo npm install https://github.com/i-akhmadullin/jet/tarball/master -g`
 
 ##Использование
