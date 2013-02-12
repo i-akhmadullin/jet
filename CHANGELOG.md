@@ -1,3 +1,7 @@
+### 0.1.3 (February 13, 2013)
+
+* Remove unneeded deps, files
+
 ### 0.1.2 (February 13, 2013)
 
 * Add grunt-contrib-jade
