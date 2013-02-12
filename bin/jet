@@ -22,6 +22,7 @@ function init() {
   // install manually. So we load tasks specifically from our node_modules,
   // with abs path.
   //
+  grunt.loadTasks(join(__dirname, '../node_modules/grunt-contrib-jade/tasks'));
   grunt.loadTasks(join(__dirname, '../node_modules/grunt-styletto/tasks'));
   grunt.loadTasks(join(__dirname, '../node_modules/grunt-css/tasks'));
 

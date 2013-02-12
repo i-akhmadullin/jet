@@ -1,7 +1,7 @@
 {
   "name": "jet",
   "description": "Stripped down yeoman with styletto",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "homepage": "http://github.com/i-akhmadullin/jet",
   "author": {
     "name": "Ilya Akhmadullin",
@@ -15,10 +15,12 @@
     "jet": "./bin/jet"
   },
   "dependencies": {
-    "grunt": "http://github.com/cowboy/grunt/archive/0ba6d4b529.tar.gz",
     "styletto": "*",
-    "grunt-styletto": "*",
+    "grunt": "http://github.com/cowboy/grunt/archive/0ba6d4b529.tar.gz",
     "grunt-css": "*",
+    "grunt-styletto": "*",
+    "grunt-contrib-jade": "~0.3.1",
+
     "request": "~2.9.200",
     "open": "0.0.2",
     "rimraf": "~2.0.1",
