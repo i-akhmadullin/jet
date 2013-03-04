@@ -17,6 +17,7 @@ function init() {
   // with abs path.
   //
   grunt.loadTasks(join(__dirname, '../node_modules/grunt-contrib-jade/tasks'));
+  grunt.loadTasks(join(__dirname, '../node_modules/grunt-contrib-copy/tasks'));
   grunt.loadTasks(join(__dirname, '../node_modules/grunt-styletto/tasks'));
   grunt.loadTasks(join(__dirname, '../node_modules/grunt-css/tasks'));
 
